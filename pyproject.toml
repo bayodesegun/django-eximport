@@ -1,0 +1,52 @@
+[project]
+name = "django-eximport"
+version = "0.1.0"
+description = "A pilot logbook application"
+authors = [
+    {name = "Bayode Aderinola", email = "bayodesegun@gmail.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+urls = { homepage = "https://createdby.bayodesegun.com/" }
+
+dependencies = [
+    "Django==5.1.1",
+    "djangorestframework==3.15.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff==0.6.4",
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include =  ["pilotlog*"]
+
+[tool.ruff]
+line-length = 79
+target-version = ['py310']
+exclude = [
+    ".eggs",
+    ".git",
+    ".hg",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "_build",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "static",
+    "migrations",
+    "__pycache__",
+    ".pytest_cache",
+]
