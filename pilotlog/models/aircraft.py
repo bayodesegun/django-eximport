@@ -1,7 +1,8 @@
 from django.db import models
+from .bases import RecordTracking
 
 
-class Aircraft(models.Model):
+class Aircraft(RecordTracking):
     aircraft_code = models.CharField(
         primary_key=True, max_length=255,
         help_text="Unique identifier for the aircraft"
