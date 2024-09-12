@@ -8,7 +8,7 @@ from .my_query import MyQuery
 from .my_query_build import MyQueryBuild
 from .pilot import Pilot
 from .qualification import Qualification
-
+from .setting_config import SettingConfig
 
 __all__ = [
     "PilotLog",
@@ -21,4 +21,5 @@ __all__ = [
     "MyQueryBuild",
     "Pilot",
     "Qualification",
+    "SettingConfig",
 ]
