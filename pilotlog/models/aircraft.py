@@ -1,3 +1,4 @@
+"""Airfield model."""
 from django.db import models
 from .bases import RecordTracking
 

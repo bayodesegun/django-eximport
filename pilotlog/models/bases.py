@@ -1,3 +1,4 @@
+"""Base models for all models in the application."""
 from django.db import models
 
 class RecordTracking(models.Model):
