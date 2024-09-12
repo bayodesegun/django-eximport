@@ -3,6 +3,7 @@ from .aircraft import Aircraft
 from .airfield import Airfield
 from .flight import Flight
 from .image_pic import ImagePic
+from .limit_rules import LimitRules
 
 __all__ = [
     "PilotLog",
@@ -10,4 +11,5 @@ __all__ = [
     "Airfield",
     "Flight",
     "ImagePic",
+    "LimitRules",
 ]
