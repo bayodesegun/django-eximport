@@ -61,4 +61,4 @@ class Airfield(models.Model):
     )
 
     def __str__(self):
-        return str(self.af_name)
+        return str(self.af_code)

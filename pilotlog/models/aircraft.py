@@ -161,7 +161,7 @@ class Aircraft(RecordTracking):
     )
 
     def __str__(self):
-        return f"Aircarft {self.make} {self.model}"
+        return f"{self.aircraft_code}"
 
     class Meta:
         verbose_name = "Aircraft"
