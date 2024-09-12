@@ -35,5 +35,9 @@ class ImagePic(RecordTracking):
         help_text="Code linking the image to other records"
     )
 
+    class Meta:
+        verbose_name = "ImagePic"
+        verbose_name_plural = "ImagePics"
+
     def __str__(self):
         return self.img_code

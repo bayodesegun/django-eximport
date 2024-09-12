@@ -33,9 +33,10 @@ class PilotLog(RecordTracking):
     )
     meta = GenericForeignKey("table", "object_id")
 
-    def __str__(self):
-        return f"PilotLog {self.id} by {self.user_id}"
-
     class Meta:
         verbose_name = "Pilot Log"
         verbose_name_plural = "Pilot Logs"
+
+
+    def __str__(self):
+        return f"PilotLog {self.id} by {self.user_id}"

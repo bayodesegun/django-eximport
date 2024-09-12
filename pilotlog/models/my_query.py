@@ -26,9 +26,9 @@ class MyQuery(RecordTracking):
         help_text="Short name or abbreviation for the query"
     )
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name = "My Query"
         verbose_name_plural = "My Queries"
+
+    def __str__(self):
+        return str(self.name)

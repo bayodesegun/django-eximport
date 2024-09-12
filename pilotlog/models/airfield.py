@@ -60,5 +60,9 @@ class Airfield(models.Model):
         help_text="Time zone code for the airfield"
     )
 
+    class Meta:
+        verbose_name = "Airfield"
+        verbose_name_plural = "Airfields"
+
     def __str__(self):
         return str(self.af_code)

@@ -160,9 +160,9 @@ class Aircraft(RecordTracking):
         help_text="Indicates if the aircraft has a tailwheel configuration"
     )
 
-    def __str__(self):
-        return f"{self.aircraft_code}"
-
     class Meta:
         verbose_name = "Aircraft"
         verbose_name_plural = "Aircraft"
+
+    def __str__(self):
+        return f"{self.aircraft_code}"

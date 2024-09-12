@@ -335,9 +335,9 @@ class Flight(RecordTracking):
         help_text="Minimum cross-country time in minutes"
     )
 
-    def __str__(self):
-        return f"Flight {self.flight_code}"
-
     class Meta:
         verbose_name = "Flight"
         verbose_name_plural = "Flights"
+
+    def __str__(self):
+        return f"Flight {self.flight_code}"
