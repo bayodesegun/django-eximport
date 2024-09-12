@@ -6,6 +6,7 @@ from .image_pic import ImagePic
 from .limit_rules import LimitRules
 from .my_query import MyQuery
 from .my_query_build import MyQueryBuild
+from .pilot import Pilot
 
 __all__ = [
     "PilotLog",
@@ -16,4 +17,5 @@ __all__ = [
     "LimitRules",
     "MyQuery",
     "MyQueryBuild",
+    "Pilot",
 ]
