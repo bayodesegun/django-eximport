@@ -7,6 +7,8 @@ from .limit_rules import LimitRules
 from .my_query import MyQuery
 from .my_query_build import MyQueryBuild
 from .pilot import Pilot
+from .qualification import Qualification
+
 
 __all__ = [
     "PilotLog",
@@ -18,4 +20,5 @@ __all__ = [
     "MyQuery",
     "MyQueryBuild",
     "Pilot",
+    "Qualification",
 ]
