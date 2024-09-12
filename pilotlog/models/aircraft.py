@@ -1,9 +1,9 @@
 """Airfield model."""
 from django.db import models
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
 
-class Aircraft(RecordTracking):
+class Aircraft(TrackedRecord):
     aircraft_code = models.CharField(
         primary_key=True, max_length=255,
         verbose_name="AircraftCode",

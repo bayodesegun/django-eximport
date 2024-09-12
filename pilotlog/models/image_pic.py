@@ -1,8 +1,8 @@
 from django.db import models
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
 
-class ImagePic(RecordTracking):
+class ImagePic(TrackedRecord):
     img_code = models.CharField(
         max_length=255,
         primary_key=True,

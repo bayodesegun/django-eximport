@@ -4,12 +4,12 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
 User = get_user_model()
 
 
-class PilotLog(RecordTracking):
+class PilotLog(TrackedRecord):
     guid = models.CharField(
         primary_key=True, max_length=255,
         verbose_name="GUID",

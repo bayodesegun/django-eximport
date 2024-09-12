@@ -1,8 +1,8 @@
 from django.db import models
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
 
-class SettingConfig(RecordTracking):
+class SettingConfig(TrackedRecord):
     config_code = models.IntegerField(
         primary_key=True,
         verbose_name="ConfigCode",

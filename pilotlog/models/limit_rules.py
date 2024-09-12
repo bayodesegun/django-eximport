@@ -1,8 +1,8 @@
 from django.db import models
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
 
-class LimitRules(RecordTracking):
+class LimitRules(TrackedRecord):
     limit_code = models.CharField(
         max_length=36,
         primary_key=True,

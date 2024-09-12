@@ -1,3 +1,4 @@
+"""pilotlog models."""
 from .pilot_log import PilotLog
 from .aircraft import Aircraft
 from .airfield import Airfield
@@ -9,6 +10,7 @@ from .my_query_build import MyQueryBuild
 from .pilot import Pilot
 from .qualification import Qualification
 from .setting_config import SettingConfig
+
 
 __all__ = [
     "PilotLog",

@@ -1,7 +1,7 @@
 from django.db import models
-from .bases import RecordTracking
+from ._bases import TrackedRecord
 
-class Qualification(RecordTracking):
+class Qualification(TrackedRecord):
     q_code = models.CharField(
         max_length=36,
         primary_key=True,
