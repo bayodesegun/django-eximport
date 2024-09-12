@@ -145,24 +145,32 @@ class Flight(TrackedRecord):
         verbose_name="NextSummary",
         help_text="Indicates if there is a next summary"
     )
-    p1_code = models.CharField(
-        max_length=36,
+    p1 = models.ForeignKey(
+        "Pilot", on_delete=models.PROTECT,
+        related_name="p1_flights",
         verbose_name="P1Code",
-        help_text="Code for the first pilot"
+        db_column="p1_code",
+        help_text="Record for the first pilot"
     )
-    p2_code = models.CharField(
-        max_length=36,
+    p2 = models.ForeignKey(
+        "Pilot", on_delete=models.PROTECT,
+        related_name="p2_flights",
         verbose_name="P2Code",
+        db_column="p2_code",
         help_text="Code for the second pilot"
     )
-    p3_code = models.CharField(
-        max_length=36,
+    p3 = models.ForeignKey(
+        "Pilot", on_delete=models.PROTECT,
+        related_name="p3_flights",
         verbose_name="P3Code",
+        db_column="p3_code",
         help_text="Code for the third pilot"
     )
-    p4_code = models.CharField(
-        max_length=36,
+    p4 = models.ForeignKey(
+        "Pilot", on_delete=models.PROTECT,
+        related_name="p4_flights",
         verbose_name="P4Code",
+        db_column="p4_code",
         help_text="Code for the fourth pilot"
     )
     pf = models.BooleanField(

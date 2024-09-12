@@ -27,9 +27,11 @@ class MyQueryBuild(TrackedRecord):
         verbose_name="Build4",
         help_text="Fourth build parameter"
     )
-    mq_code = models.CharField(
-        max_length=36,
+    mq = models.ForeignKey(
+        "MyQuery", on_delete=models.PROTECT,
+        related_name="my_query_builds",
         verbose_name="mQCode",
+        db_column="mq_code",
         help_text="Associated query code"
     )
 

@@ -21,12 +21,12 @@ class ImagePic(TrackedRecord):
     )
     img_download = models.BooleanField(
         default=False,
-        verbose_name="Img_Download",
+        verbose_name="ImgDownload",
         help_text="Indicates if the image has been downloaded"
     )
     img_upload = models.BooleanField(
         default=False,
-        verbose_name="Img_Upload",
+        verbose_name="ImgUpload",
         help_text="Indicates if the image has been uploaded"
     )
     link_code = models.CharField(
@@ -41,3 +41,11 @@ class ImagePic(TrackedRecord):
 
     def __str__(self):
         return self.img_code
+
+    @classmethod
+    def process_for_storage(cls, data):
+        processed_data = super().process_for_storage(data)
+        processed_data['image_download'] = data.get('Image_Download', False)
+        processed_data['image_upload'] = data.get('Image_Upload', False)
+
+        return processed_data

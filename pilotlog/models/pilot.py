@@ -14,9 +14,9 @@ class Pilot(TrackedRecord):
         verbose_name="Active",
         help_text="Indicates if the pilot is currently active"
     )
-    certificate = models.CharField(
-        max_length=255,
-        blank=True,
+    certificate = models.ForeignKey(
+        "Qualification", on_delete=models.PROTECT,
+        blank=True, null=True,
         verbose_name="Certificate",
         help_text="Pilot's certificate information"
     )
