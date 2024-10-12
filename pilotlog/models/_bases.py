@@ -5,6 +5,7 @@ from django.db import models
 
 
 class TrackedRecord(models.Model):
+    """A record whose modification date and time is tracked."""
     record_modified = models.DateTimeField(
         auto_now=True,
         verbose_name='RecordModified',

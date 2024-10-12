@@ -12,7 +12,7 @@ User = get_user_model()
 class PilotLog(TrackedRecord):
     guid = models.CharField(
         primary_key=True, max_length=255,
-        verbose_name="GUID",
+        verbose_name="guid",
         help_text="The unique identifier for this record"
     )
     user = models.ForeignKey(
@@ -23,12 +23,13 @@ class PilotLog(TrackedRecord):
     )
     platform = models.IntegerField(
         blank=False, null=False, db_index=True,
-        verbose_name="Platform",
+        verbose_name="platform",
         help_text="The platform this record belongs to"
     )
     table = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.CharField(
         max_length=255,
+        verbose_name="object_id",
         help_text="The id of the object this record belongs to"
     )
     meta = GenericForeignKey("table", "object_id")
@@ -37,6 +38,12 @@ class PilotLog(TrackedRecord):
         verbose_name = "Pilot Log"
         verbose_name_plural = "Pilot Logs"
 
-
     def __str__(self):
         return f"PilotLog {self.id} by {self.user_id}"
+
+    @classmethod
+    def process_for_storage(cls, data):
+        processed_data = super().process_for_storage(data)
+        processed_data['table_id'] = data.get('table').lower()
+
+        return processed_data
